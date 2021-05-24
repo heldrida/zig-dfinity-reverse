@@ -1,0 +1,7 @@
+{
+  "canisters":  {
+    "reverse":  {
+      "main": "reverse" 
+    }
+  }
+}
