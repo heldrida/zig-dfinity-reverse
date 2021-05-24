@@ -22,13 +22,3 @@ export fn @"canister_query go"() void {
   msg_reply_data_append(c_target, sz);
   msg_reply();
 }
-
-test "slice dynamic size" {
-  const message = [_]u8{ 'h', 'e', 'l', 'l', 'o' };
-  const x: i32 = message.len;
-  const sz: usize = @intCast(usize, x);
-  print("Result 1 is {d}!\n", .{ sz });
-  print("Result 2 is {s}!\n", .{ message[0..sz] });
-  print("Result typeof 1 {s}\n", .{ @TypeOf(message[0..5]) });
-  print("Result typeof 2 {s}\n", .{ @TypeOf(message[0..sz]) });
-}
